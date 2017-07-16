@@ -1,0 +1,95 @@
+/* Custom CSS */
+
+
+/*----- General ----- */
+
+.blue {
+	background-color: #2D396F;
+}
+
+.dark-gray {
+	background-color: #8A8D99;
+}
+
+.light-gray-font {
+	color: #BABBC1;
+}
+
+.white-font {
+	color: #fff;
+}
+
+.blue-font {
+	color: #2D396F;
+}
+
+.container {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.section-title {
+	border-bottom: 1px solid #2D396F;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}
+
+.title {
+	padding: 10px 20px 0 20px;
+}
+
+/*----- Header -----*/
+
+header.container {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	width: 100%;
+}
+
+/*----- Calculator -----*/
+
+#calc-info {
+	padding-bottom: 20px;
+}
+
+#calculator .nav a {
+	color: #2D396F;
+}
+
+.calc-section {
+	background-color: #ECF0F1;
+	margin: 40px 20px;
+	border-top: 5px solid #2D396F;
+}
+
+.form-first-item {
+	margin: 10px 20px 5px 20px;
+}
+
+.form-second-item {
+	margin: 5px 20px 10px 20px;
+}
+
+.input-salary {
+	width: 80%;
+}
+
+.form-group {
+	padding-top: 10px;
+}
+
+#calculator .btn {
+	margin-top: 40px;
+}
+
+.tax-info {
+	margin: 20px 40px;
+}
+
+/*----- Footer -----*/
+
+footer.container {
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}

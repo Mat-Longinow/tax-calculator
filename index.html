@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Tax Calculator</title>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+
+	<!-- jQuery -->
+	<script src="http://code.jquery.com/jquery.js"></script>
+</head>
+
+<body>
+	<div id="container">
+		<header class="container blue white-font">
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<h1>Tax Calculator</h1>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<article>
+							<h3 class="section-title">About</h3>
+
+							<p>This calcualor will be for calculating taxes based on 2017's tax brackets. All financial resources will be pulled from <a href="https://taxfoundation.org">taxfoundation.org</a>.</p>
+						</article>
+					</div>
+				</div>
+
+				<div class="row" id="calculator">
+					<div class="col-sm-12">
+						<article>
+							<h3 class="section-title">Calculator</h3>
+
+							<p id="calc-info">Choose the appropriate tax filing status tab and fill out the form below.</p>
+							
+							<div class="row">
+								<div class="col-sm-12">
+									<ul class="nav nav-tabs" role="tablist">
+										<li role="presentation" class="active"><a href="#single" aria-controls="single" role="tab" data-toggle="tab">Single Filer</a></li>
+
+										<li role="presentation"><a href="#joint" aria-controls="joint" role="tab" data-toggle="tab">Married, Filing Jointly</a></li>
+
+										<li role="presentation"><a href="#sep" aria-controls="sep" role="tab" data-toggle="tab">Married, Filing Seperately</a></li>
+
+										<li role="presentation"><a href="#headof" aria-controls="headof" role="tab" data-toggle="tab">Head Of Household</a></li>
+									</ul>
+
+									<div class="tab-content">
+										<div role="tabpanel" class="tab-pane active" id="single">
+											<div class="row calc-section">
+												<div class="col-sm-12">
+													<h3 class="title">Single Filer</h3>
+
+													<div class="row">
+														<form>
+															<div class="form-group">
+																<div class="col-sm-6">
+																	<label class="form-first-item">Annual Salary</label>
+																	<input class="form-control form-second-item input-salary" id="single-input" placeholder="Salary">
+																</div>
+
+																<div class="col-sm-6">
+																	<button id="single-button" type="submit" class="btn btn-default form-second-item">Submit</button>
+																</div>
+															</div>
+														</form>
+													</div>
+
+													<div class="row">
+														<div class="col-sm-4 tax-info">
+															<h4 class="section-title"><b>Estimated Federal Tax Info</b></h4>
+
+															<div class="tax-row">
+																<h4>Federal Tax Amount</h4>
+
+																<h4 id="tax-as" class="blue-font">$0</h4>
+															</div>
+
+															<div class="tax-row">
+																<h4>Federal Tax Bracket</h4>
+
+																<h4 id="tax-bs" class="blue-font">0%</h4>
+															</div>
+
+															<div class="tax-row">
+																<h4>Federal Tax As Percentage Of Income</h4>
+
+																<h4 id="tax-ps" class="blue-font">0%</h4>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div role="tabpanel" class="tab-pane" id="joint">
+											<div class="row calc-section">
+												<div class="col-sm-12">
+													<h3 class="title">Married, Filing Jointly</h3>
+
+													<div class="row">
+														<form>
+															<div class="form-group">
+																<div class="col-sm-6">
+																	<label class="form-first-item">Annual Salary</label>
+																	<input id="joint-input" class="form-control form-second-item input-salary" placeholder="Salary">
+																</div>
+
+																<div class="col-sm-6">
+																	<button id="joint-button" type="submit" class="btn btn-default form-second-item">Submit</button>
+																</div>
+															</div>
+														</form>
+													</div>
+
+													<div class="row">
+														<div class="col-sm-4 tax-info">
+															<h4 class="section-title"><b>Estimated Federal Tax Info</b></h4>
+
+															<div class="tax-row">
+																<h4>Federal Tax Amount</h4>
+
+																<h4 id="tax-aj" class="blue-font">$0</h4>
+															</div>
+
+															<div class="tax-row">
+																<h4>Federal Tax Bracket</h4>
+
+																<h4 id="tax-bj" class="blue-font">0%</h4>
+															</div>
+
+															<div class="tax-row">
+																<h4>Federal Tax As Percentage Of Income</h4>
+
+																<h4 id="tax-pj" class="blue-font">0%</h4>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div role="tabpanel" class="tab-pane" id="sep">
+											<div class="row calc-section">
+												<div class="col-sm-12">
+													<h3 class="title">Married, Filing Seperately</h3>
+
+													<div class="row">
+														<form>
+															<div class="form-group">
+																<div class="col-sm-6">
+																	<label class="form-first-item">Annual Salary</label>
+																	<input id="sep-input" class="form-control form-second-item input-salary" placeholder="Salary">
+																</div>
+
+																<div class="col-sm-6">
+																	<button id="sep-button" type="submit" class="btn btn-default form-second-item">Submit</button>
+																</div>
+															</div>
+														</form>
+													</div>
+
+													<div class="row">
+														<div class="col-sm-4 tax-info">
+															<h4 class="section-title"><b>Estimated Federal Tax Info</b></h4>
+
+															<div class="tax-row">
+																<h4>Federal Tax Amount</h4>
+
+																<h4 id="tax-asp" class="blue-font">$0</h4>
+															</div>
+
+															<div class="tax-row">
+																<h4>Federal Tax Bracket</h4>
+
+																<h4 id="tax-bsp" class="blue-font">0%</h4>
+															</div>
+
+															<div class="tax-row">
+																<h4>Federal Tax As Percentage Of Income</h4>
+
+																<h4 id="tax-psp" class="blue-font">0%</h4>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div role="tabpanel" class="tab-pane" id="headof">
+											<div class="row calc-section">
+												<div class="col-sm-12">
+													<h3 class="title">Head Of Household</h3>
+
+													<div class="row">
+														<form>
+															<div class="form-group">
+																<div class="col-sm-6">
+																	<label class="form-first-item">Annual Salary</label>
+																	<input id="headof-input" class="form-control form-second-item input-salary" placeholder="Salary">
+																</div>
+
+																<div class="col-sm-6">
+																	<button id="headof-button" type="submit" class="btn btn-default form-second-item">Submit</button>
+																</div>
+															</div>
+														</form>
+													</div>
+
+													<div class="row">
+														<div class="col-sm-4 tax-info">
+															<h4 class="section-title"><b>Estimated Federal Tax Info</b></h4>
+
+															<div class="tax-row">
+																<h4>Federal Tax Amount</h4>
+
+																<h4 id="tax-ah" class="blue-font">$0</h4>
+															</div>
+
+															<div class="tax-row">
+																<h4>Federal Tax Bracket</h4>
+
+																<h4 id="tax-bh" class="blue-font">0%</h4>
+															</div>
+
+															<div class="tax-row">
+																<h4>Federal Tax As Percentage Of Income</h4>
+
+																<h4 id="tax-ph" class="blue-font">0%</h4>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<footer class="container dark-gray">
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<p>Designed &amp; Developed By <a href="https://github.com/Mat-Longinow">Mat Longinow</a> &copy; 2017</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+
+	<!-- Calculator JS -->
+	<script src="js/calc.js" type="text/javascript"></script>
+</body>
+
+</html>
